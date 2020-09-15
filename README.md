@@ -11,4 +11,8 @@ Foi utilizado Spring Batch para a leitura do arquivo .csv informado, retornando 
 
 ## Execução
 
-Adicionar o arquivo .csv na raíz do projeto e enviar o nome do arquivo pelo parâmetro dos argumentos de execução (arquivoContas=file:contas.csv);
+Executar o maven install para criação do .jar, adicionar o arquivo .csv na raíz do projeto e enviar o nome do arquivo pelo parâmetro dos argumentos de execução (arquivoContas=file:contas.csv);
+
+```execucao
+java -jar sincronizacaoreceita-0.0.1-SNAPSHOT.jar arquivoContas=file:contas.csv
+```
