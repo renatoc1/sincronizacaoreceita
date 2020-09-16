@@ -9,16 +9,15 @@ import org.springframework.core.io.FileSystemResource;
 import com.teste.sincronizacaoreceita.dominio.Conta;
 
 @Configuration
-public class ContaWriterConfig {
+public class ContaInvalidWriterConfig {
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Bean
-	public FlatFileItemWriter<Conta> contaWriter() {
+	public FlatFileItemWriter<Conta> contaInvalidWriter() {
 		return new FlatFileItemWriterBuilder()
-				.name("contaWriter")
-				.resource(new FileSystemResource("./arquivo_contas"))
+				.name("contaInvalidWriter")
+				.resource(new FileSystemResource("./arquivo_contas_invalid"))
 				.delimited()
-				.delimiter(";")
 				.names("agencia", "conta", "saldo", "status", "resultado")
 				.build();
 	}

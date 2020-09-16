@@ -21,7 +21,6 @@ public class ArquivoContaReaderConfig {
 				.name("arquivoContaReader")
 				.resource(arquivoContas)
 				.delimited()
-				.delimiter(";")
 				.names(new String [] {"agencia", "conta", "saldo", "status"})
 				.addComment("--")
 				.targetType(Conta.class)
