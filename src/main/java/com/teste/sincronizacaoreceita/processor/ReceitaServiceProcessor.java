@@ -3,6 +3,7 @@ package com.teste.sincronizacaoreceita.processor;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.batch.item.ItemProcessor;
 
 import com.teste.sincronizacaoreceita.dominio.Conta;
@@ -26,12 +27,12 @@ public class ReceitaServiceProcessor implements ItemProcessor<Conta, Conta> {
 		
 			
         // Formato agencia: 0000
-        if (agencia == null || agencia.length() != 4) {
+        if (agencia == null || agencia.length() != 4 || !NumberUtils.isCreatable(agencia)) {
             return false;
         }
         
         // Formato conta: 000000
-        if (conta == null || conta.length() != 6) {
+        if (conta == null || conta.length() != 6 || !NumberUtils.isCreatable(conta)) {
             return false;
         }
         
